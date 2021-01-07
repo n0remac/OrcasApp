@@ -1,0 +1,41 @@
+<!-- templates/ripplerock.html-->
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}RippleRock{% endblock %}
+
+{% block content %}
+
+
+<img id="bg" src="{% static 'images/cattlepass.jpg' %}"/>
+<div class="container">
+    <img id="cloud" src="{% static 'images/cloud.png' %}"/>
+
+    <div id="title" class="centered page-content"> <p> Ripple Rock</p></div>
+
+    <div id="about" class="centered page-content"> <p> What we do</p></div>
+
+    <div id="contact" class="centered page-content"> <p> Get in touch</p></div>
+</div>
+
+
+
+<div class="row">
+    <div id="mushroommanholder" class="column">
+        <img id="mushroomman" onclick="toggle('contact')" src="{% static 'images/mushroomdude.jpg' %}"/>
+        <div class="imagetext"> Contact </div>
+    </div>
+    <div id="madronamanholder" class="column">
+        <img id="madronaman" onclick= "toggle('about')" src="{% static 'images/madronaman.png' %}"/>
+        <div class="imagetext"> About </div>
+    </div>
+    <div id="buggyholder" class="column">
+        <img id="buggy" onclick="toggle('title')" src="{% static 'images/buggy.jpg' %}"/>
+        <div class="imagetext"> Title </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

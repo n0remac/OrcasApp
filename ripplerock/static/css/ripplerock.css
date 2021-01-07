@@ -1,0 +1,80 @@
+
+#bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+
+    opacity: 90%;
+    transform: translate(0px, -500px);
+}
+#cloud{
+    width: 100%;
+}
+#buggy{
+    position: relative;
+    width: 30%;
+}
+#madronaman{
+    position: relative;
+    width: 30%;
+}
+#mushroomman{
+    position: relative;
+    width: 30%;
+    transform: translate(10%);
+}
+#mushroommanholder{
+    position: relative;
+    transform: translate(0%, -50%);
+}
+#madronamanholder{
+    position: relative;
+}
+#buggyholder{
+    position: relative;
+    transform: translate(0%, -20%);
+}
+.container{
+    width: 50%;
+    position: absolute;
+    transform: translate(50%);
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottom{
+    width: 50%;
+    position: absolute;
+    bottom: 0px;
+    transform: translate(50%)
+}
+
+ /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.row{
+
+  display: flex;
+    width: 50%;
+    position: absolute;
+    bottom: 0px;
+    transform: translate(50%)
+}
+
+/* Clear floats after image containers */
+
+
+.imagetext {
+  position: absolute;
+  transform: translate(50%);
+}
