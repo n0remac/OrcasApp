@@ -14,11 +14,18 @@
 
     <div id="title" class="centered page-content"> <p> Ripple Rock</p></div>
 
-    <div id="about" class="centered page-content"> <p> What we do</p></div>
+    {% for content in about %}
+        <div id="about" class="centered page-content">
+            <p>{{ content.text}}</p>
+        </div>
+    {% endfor %}
 
-    <div id="contact" class="centered page-content"> <p> Get in touch</p></div>
+    {% for content in contact %}
+        <div id="contact" class="centered page-content">
+            <p>{{ content.text}}</p>
+        </div>
+    {% endfor %}
 </div>
-
 
 
 <div class="row">
