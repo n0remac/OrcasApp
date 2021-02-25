@@ -8,7 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(blank=True, null=True)    
 
     def publish(self):
         self.published_date = timezone.now()
@@ -16,3 +16,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Survey(models.Model):
+    name = models.CharField(max_length=200)
+    age = models.IntegerField()
+    reason = models.TextField()
+    life_quality = models.TextField()
+    amenities = models.TextField()
+    ideal_free_time = models.TextField()
+    noncontentment = models.TextField()
+    want_to_learn = models.TextField()

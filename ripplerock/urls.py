@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views
+from .views import FrontPage
 
 urlpatterns = [
-    path('', views.ripplerock, name='ripplerock'),
+    #path('', views.ripplerock, name='ripplerock'),
+    path('', FrontPage.as_view(), name='frontpage'),
 ]
