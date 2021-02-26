@@ -19,11 +19,16 @@ class Post(models.Model):
 
 
 class Survey(models.Model):
-    name = models.CharField(max_length=200)
-    age = models.IntegerField()
-    reason = models.TextField()
-    life_quality = models.TextField()
-    amenities = models.TextField()
-    ideal_free_time = models.TextField()
-    noncontentment = models.TextField()
-    want_to_learn = models.TextField()
+    time_on_island = models.CharField(max_length=200, blank=True, null=True, default='0 - 1')
+    age = models.IntegerField(blank=True, null=True, default=' ')
+    reason = models.TextField(blank=True, null=True, default=' ')
+    life_quality = models.TextField(blank=True, null=True, default=' ')
+    amenities = models.TextField(blank=True, null=True, default=' ')
+    ideal_free_time = models.TextField(blank=True, null=True, default=' ')
+    noncontentment = models.TextField(blank=True, null=True, default=' ')
+    want_to_learn = models.TextField(blank=True, null=True, default=' ')
+
+
+class Paragraph(models.Model):
+    paragraph = models.TextField(blank=True, null=True, default=' ')
+    page = models.CharField(max_length=50, default=' ')
