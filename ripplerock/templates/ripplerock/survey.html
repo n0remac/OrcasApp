@@ -1,0 +1,45 @@
+{% extends "ripplerock/base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Ripple Rock
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1 class="text-center">Islanders Survey</h1>
+
+        {% if surveys.has_other_pages %}
+            {% if surveys.has_previous %}
+                <a href="?page=1">First</a>
+                <a href="?page={{ surveys.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% for num in surveys.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a href="page={{ num }}">{{ num }}</a>
+                {% elif num > comments.number|add:'-3' and num < comments.number|add:'3' %}
+                    <a href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if surveys.has_next %}
+                <a href="?page={{ surveys.next_page_number }}">Next</a>
+                <a href="?page={{ surveys.paginator.num_pages }}">Last</a>
+            {% endif %}
+        {% endif %}
+
+        {% for survey in surveys %}
+            <p>Time on Orcas: {{ survey.time_on_island}}</p>
+            <p>Age: {{ survey.age}}</p>
+            <p>Reason to live here: {{ comment.reason|linebreaksbr }}</p>
+            <p>Current amenities: {{ survey.amenities}}</p>
+            <p>If you could do anything: {{ survey.ideal_free_time}}</p>
+            <p>Unfulfilled contentment: {{ survey.noncontentment}}</p>
+            <p>What do you want to learn: {{ survey.want_to_learn}}</p>
+            <hr noshade>
+        {% endfor %}
+    </div>
+
+{% endblock %}
