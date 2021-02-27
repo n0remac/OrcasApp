@@ -31,4 +31,4 @@ class Survey(models.Model):
 
 class Paragraph(models.Model):
     paragraph = models.TextField(blank=True, null=True, default=' ')
-    page = models.CharField(max_length=50, default=' ')
+    page = models.CharField(max_length=50, null=True, default=' ')
